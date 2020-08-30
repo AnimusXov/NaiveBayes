@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Naive Bayes:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Naive_Bayes_jar</output-path>
+    <root id="archive" name="Naive Bayes.jar">
+      <element id="module-output" name="Naive Bayes" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/pj2_20190611.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/pj2src_20190611.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-lang3-3.9/commons-lang3-3.9.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-lang3-3.9/commons-lang3-3.9-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-lang3-3.9/commons-lang3-3.9-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-lang3-3.9/commons-lang3-3.9-test-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-collections4-4.3/commons-collections4-4.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-collections4-4.3/commons-collections4-4.3-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-collections4-4.3/commons-collections4-4.3-javadoc.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-collections4-4.3/commons-collections4-4.3-sources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/commons-collections4-4.3/commons-collections4-4.3-test-sources.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

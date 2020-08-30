@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_naive_bayes" default="compile.module.naive_bayes">
+  <dirname property="module.naive_bayes.basedir" file="${ant.file.module_naive_bayes}"/>
+  
+  <property name="module.jdk.home.naive_bayes" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.naive_bayes" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.naive_bayes" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.naive_bayes" value="-encoding UTF-8 -source 10 -target 10 ${compiler.args}"/>
+  
+  <property name="naive_bayes.output.dir" value="${module.naive_bayes.basedir}/out/production/Naive Bayes"/>
+  <property name="naive_bayes.testoutput.dir" value="${module.naive_bayes.basedir}/out/test/Naive Bayes"/>
+  
+  <path id="naive_bayes.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="naive_bayes.module.production.classpath">
+    <path refid="${module.jdk.classpath.naive_bayes}"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar"/>
+    <path refid="library.commons-lang3-3.9-bin.classpath"/>
+    <path refid="library.commons-collections4-4.classpath"/>
+    <path refid="library.pjsrc20150107.classpath"/>
+    <path refid="library.pj2_20190611.classpath"/>
+  </path>
+  
+  <path id="naive_bayes.runtime.production.module.classpath">
+    <pathelement location="${naive_bayes.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar"/>
+    <path refid="library.commons-lang3-3.9-bin.classpath"/>
+    <path refid="library.commons-collections4-4.classpath"/>
+    <path refid="library.pjsrc20150107.classpath"/>
+    <path refid="library.pj2_20190611.classpath"/>
+  </path>
+  
+  <path id="naive_bayes.module.classpath">
+    <path refid="${module.jdk.classpath.naive_bayes}"/>
+    <pathelement location="${naive_bayes.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar"/>
+    <path refid="library.commons-lang3-3.9-bin.classpath"/>
+    <path refid="library.commons-collections4-4.classpath"/>
+    <path refid="library.pjsrc20150107.classpath"/>
+    <path refid="library.pj2_20190611.classpath"/>
+  </path>
+  
+  <path id="naive_bayes.runtime.module.classpath">
+    <pathelement location="${naive_bayes.testoutput.dir}"/>
+    <pathelement location="${naive_bayes.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/org/jetbrains/annotations/16.0.2/annotations-16.0.2.jar"/>
+    <path refid="library.commons-lang3-3.9-bin.classpath"/>
+    <path refid="library.commons-collections4-4.classpath"/>
+    <path refid="library.pjsrc20150107.classpath"/>
+    <path refid="library.pj2_20190611.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.naive_bayes">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.naive_bayes">
+    <patternset refid="excluded.from.module.naive_bayes"/>
+  </patternset>
+  
+  <path id="naive_bayes.module.sourcepath">
+    <dirset dir="${module.naive_bayes.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.naive_bayes" depends="compile.module.naive_bayes.production,compile.module.naive_bayes.tests" description="Compile module Naive Bayes"/>
+  
+  <target name="compile.module.naive_bayes.production" depends="register.custom.compilers" description="Compile module Naive Bayes; production classes">
+    <mkdir dir="${naive_bayes.output.dir}"/>
+    <javac2 destdir="${naive_bayes.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.naive_bayes}/javac">
+      <compilerarg line="${compiler.args.naive_bayes}"/>
+      <bootclasspath refid="naive_bayes.module.bootclasspath"/>
+      <classpath refid="naive_bayes.module.production.classpath"/>
+      <src refid="naive_bayes.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.naive_bayes"/>
+    </javac2>
+    
+    <copy todir="${naive_bayes.output.dir}">
+      <fileset dir="${module.naive_bayes.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.naive_bayes.tests" depends="register.custom.compilers,compile.module.naive_bayes.production" description="compile module Naive Bayes; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.naive_bayes" description="cleanup module">
+    <delete dir="${naive_bayes.output.dir}"/>
+    <delete dir="${naive_bayes.testoutput.dir}"/>
+  </target>
+</project>
